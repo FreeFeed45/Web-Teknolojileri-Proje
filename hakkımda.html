@@ -3,65 +3,95 @@
 <head>
     <title>Hakkımda</title>
     <style>
-        .greettext {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+
+
+            color: white;
+            font-family: Arial, sans-serif;
         }
 
-        .greettext img {
-            width: 320px;
+        .container {
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            min-height: 100vh;
         }
 
-        .text {
-            margin-top: 40px;
+        .textclass1 {
+            /* Grid'i kaldırıyoruz, metin düzeni için gereksiz */
+            display: block;
+            text-align: center;
+            /* Metinlerin sola yaslı başlamasını istiyoruz */
+            max-width: 800px;
+            /* Metinlerin çok yayılmaması için bir sınır */
+            margin: 0 auto;
+            /* Kutuyu sayfanın ortasına çeker ama içindeki yazıyı sola yaslar */
+            padding: 20px;
         }
 
-        .baslik {
-            margin-left: 100px;
-            margin-top: 80px;
+        .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 300px; 
+    gap: 40px;
+    padding: 50px;
+    
+}
+.profil-resmi {
+    width: 100%;       
+    height: auto;      
+    border-radius: 15px; 
+}
+        h1,
+        h4
+        {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 
 <body>
 
-    <div class="greettext">
+      
+        
+        <div style="padding-top: 3%; padding-right: 20%;" class="textclass1">
+            Merhaba, ben <b>Yusuf Selim Uludağ!</b>
+            <br>
 
-        <img src="photo.jpg" width="620">
-        <div class="text">
-            <p>
-                Merhaba, ben <b>Yusuf Selim Uludağ!</b>
-                <br>
-                <br>
-                Bu sitede kendimden bahsediceğim, dinlediğiniz için teşekkürler!
-            </p>
+            Bu sitede kendimden bahsediceğim, dinlediğiniz için teşekkürler!
         </div>
-    </div>
-    <br>
-    <div>
-        <h1 class="baslik">Giriş</h1>
-        İsmim Yusuf Selim Uludağ, Sakarya Üniversitesi Bilgisayar Mühendisliği okuyorum
         <br>
-        <br>
-        27 Aralık 2007 doğumluyum.
-        <br>
-        <ul>
-            <ul type="disc">
-                <li>
-                    <h4>Hobilerim:</h4>
-                </li>
-            </ul>
-            <li type="circle"> <h5>Bireysel kodlama:</h5></li>
-            -Evde kendi başıma C#, C++, HTML dillerinde kod yazmayı severim!, genelde AI dan bir konu isterim
-            <br>ve bu konuyla ilgili kendi çapımda kod yazarım.
-            <li type="circle"> <h5>Futbol:</h5></li>
-            -Çok açıklacak bir şey yok, sarı kırmızıyı severiz.
-            <li type="circle"> <h5>Bilgisayar oyunları:</h5></li>
-            -Küçüklüğümden beri bilgisayar ile haşır neşirimdir, şu anda Valorant ve League of Legends oyunlarını aktif olarak oynuyorum.
-            
-        </ul>
+        <div style="padding-right: 20%;" class="textclass1">
+            <h1 class="baslik">Giriş</h1>
 
+            İsmim Yusuf Selim Uludağ, Sakarya Üniversitesi Bilgisayar Mühendisliği okuyorum
+
+            <br>
+            <br>
+            27 Aralık 2007 doğumluyum.
+            <br>
+            <h3 style="text-align: center; ">●Hobilerim:</h3>
+            <h4>○Bireysel kodlama:</h4>
+            -Evde kendi başıma C#, C++, HTML dillerinde kod yazmayı severim!, genelde AI dan bir konu isterim
+            <br>
+            ve bu konuyla ilgili kendi çapımda kod yazarım.
+            <h4>○Futbol:</h4>
+
+            -Çok açıklacak bir şey yok, sarı kırmızıyı severiz.
+
+            <h4>○Bilgisayar oyunları:</h4>
+
+            -Küçüklüğümden beri bilgisayar ile haşır neşirimdir, şu anda Valorant ve League of Legends oyunlarını
+            aktif
+            olarak oynuyorum.
+            </ul>
+        </div>
+        
     </div>
 </body>
 
