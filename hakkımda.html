@@ -11,62 +11,52 @@
             background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
-
-
             color: white;
             font-family: Arial, sans-serif;
         }
 
         .container {
-            padding: 50px;
-            background-color: rgba(0, 0, 0, 0.5);
-            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .side-image {
+            width: 500px;
+            margin-left: 40px;
+            margin-top: 120px;
+        }
+
+        .socials {
+            display: flex;
+            padding-right: 250px;
+            padding-top: 30px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .textclass1 {
-            /* Grid'i kaldırıyoruz, metin düzeni için gereksiz */
             display: block;
             text-align: center;
-            /* Metinlerin sola yaslı başlamasını istiyoruz */
             max-width: 800px;
-            /* Metinlerin çok yayılmaması için bir sınır */
             margin: 0 auto;
-            /* Kutuyu sayfanın ortasına çeker ama içindeki yazıyı sola yaslar */
             padding: 20px;
-        }
-
-        .hero-container {
-    display: grid;
-    grid-template-columns: 1fr 300px; 
-    gap: 40px;
-    padding: 50px;
-    
-}
-.profil-resmi {
-    width: 100%;       
-    height: auto;      
-    border-radius: 15px; 
-}
-        h1,
-        h4
-        {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            padding-left: 3%;
         }
     </style>
 </head>
 
 <body>
-
-      
-        
-        <div style="padding-top: 3%; padding-right: 20%;" class="textclass1">
-            Merhaba, ben <b>Yusuf Selim Uludağ!</b>
-            <br>
-
-            Bu sitede kendimden bahsediceğim, dinlediğiniz için teşekkürler!
-        </div>
+    <div style="padding-top: 3%; align-items: center; padding-right: 10%;" class="textclass1">
+        Merhaba, ben <b>Yusuf Selim Uludağ!</b>
         <br>
-        <div style="padding-right: 20%;" class="textclass1">
+        <br>
+        Bu sitede kendimden bahsediceğim, dinlediğiniz için teşekkürler!
+    </div>
+    <br>
+    <div class="container">
+        <div class="textclass1">
             <h1 class="baslik">Giriş</h1>
 
             İsmim Yusuf Selim Uludağ, Sakarya Üniversitesi Bilgisayar Mühendisliği okuyorum
@@ -90,8 +80,23 @@
             aktif
             olarak oynuyorum.
             </ul>
+            <div class="socials">
+                <h4>Sosyal Hesaplarım:</h4>
+                <a href="https://www.instagram.com/freefeed38/" target="_blank">
+                    <img src="instagram-icon.png" width="45px">
+                </a>
+                <a href="https://www.youtube.com/@freefeed9106"  target="_blank">
+                    <img src="yt-icon.png" width="45px">
+                </a>
+                <a href="https://x.com/FreeFeed5"  target="_blank">
+                    <img src="x-icon.png" width="45px" >
+                </a>
+                <a href="https://github.com/FreeFeed45"  target="_blank">
+                    <img src="github-icon.png" width="45px">
+                </a>
+            </div>
         </div>
-        
+        <img src="photo.jpg" class="side-image" style="padding-right: 100px;">
     </div>
 </body>
 
