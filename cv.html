@@ -1,26 +1,143 @@
-<html>
-
 <head>
+    <meta charset="UTF-8">
+    <title>CV</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-image: url("background.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
             color: white;
-            font-family: Arial, sans-serif;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        aside {
+            flex: 1;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .cv-img {
+            width: 150px;
+            height: 150px;
+            background-color: #bdc3c7;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            object-fit: cover;
+            border: 3px solid #2c3e50;
+        }
+
+
+        section {
+            flex: 2;
+            padding: 30px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        article {
+            margin-bottom: 20px;
+            display: grid;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+        }
+
+        a {
+            color: black;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
         }
     </style>
-    <title>
-        CV
-    </title>
 </head>
 
 <body>
-İsim: <b>Yusuf Selim Uludağ.</b>
+
+    <header>
+        <h1>YUSUF SELİM ULUDAĞ</h1>
+        <p>Bilgisayar Mühendisliği Öğrencisi</p>
+        <p>(Sakarya Üniversitesi)</p>
+    </header>
+
+    <main>
+        <aside>
+            <img src="cvphoto.jpg" class="cv-img">
+
+            <a href="iletişim.html" style="color: black; text-decoration: none; font-weight: bold; ">
+                <h2 style="padding-left: 80px;">İletişim</h2>
+            </a>
+
+
+            <h3>Kodlama Bilgisi</h3>
+            <ul>
+                <li>C# / C++</li>
+                <li>HTML / CSS / JavaScript</li>
+            </ul>
+        </aside>
+
+        <section>
+            <h2>Eğitim</h2>
+            <article>
+                <strong>Şehit Özcan Kan Fen Lisesi (2021-2025)</strong>
+                <br>
+                <strong>Sakarya Üniversitesi</strong>
+                <p>Bilgisayar Mühendisliği (2025 - Günümüz)</p>
+            </article>
+
+            <h2>İş Deneyimleri</h2>
+            <article>
+                <strong>KYK Yurt-Time Spor projesi</strong>
+                <p>İdari Asistan, Çamaşırhane Görevlisi, Yemekhane Görevlisi</p>
+            </article>
+
+            <h2>Hakkımda</h2>
+            <p>
+                Teknolojiye ve strateji oyunlarına meraklı, sürekli öğrenmeyi amaçlayan bir mühendis adayıyım.
+                Algoritmalar ve yazılım geliştirme süreçleri üzerine kendimi geliştiriyorum.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>2026 Yusuf Selim Uludağ</p>
+        <a href="hakkımda.html">Hakkımda</a>
+        <a href="Şehir.html">Şehrim</a>
+        <a href="Takım.html">Takımım</a>
+        <a href="iletişim.html">İletişim</a>
+    </footer>
+
 </body>
 
 </html>

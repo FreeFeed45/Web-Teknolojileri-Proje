@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Hakkımda</title>
     <style>
         body {
@@ -29,7 +30,8 @@
 
         .socials {
             display: flex;
-            padding-left: 800px;
+            color: #333;
+            padding-right: 200px;
             align-items: center;
             justify-content: center;
             gap: 10px;
@@ -39,12 +41,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 20px;
-            padding: 0 75px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color:#f4f4f4;;
+            padding: 1px 0; 
+            box-sizing: border-box;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1); 
         }
-
         .redirect a {
-            color: white;
+            color: black;
             text-decoration: none;
             font-weight: bold;
         }
@@ -53,7 +60,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            margin-left: 75px;
+            gap: 20px;
         }
 
         .textclass1 {
@@ -109,7 +117,7 @@
                     <a href="Takım.html">Takımım</a>
                     <a href="iletişim.html">İletişim</a>
                 </div>
-                <div class="socials">
+                <div class="socials" >
                     <h4>Sosyal Hesaplarım:</h4>
                     <a href="https://www.instagram.com/freefeed38/" target="_blank">
                         <img src="instagram-icon.png" width="45px">
@@ -124,7 +132,6 @@
                         <img src="github-icon.png" width="45px">
                     </a>
                 </div>
-
             </div>
         </div>
         <img src="photo.jpg" class="side-image" style="padding-right: 100px;">
