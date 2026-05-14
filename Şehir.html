@@ -1,8 +1,103 @@
 <html>
-    <title>
-        CV
-    </title>
-    <body>
-        asd
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Şehrim</title>
+    <link rel="stylesheet" href="sehir.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Sakarya'yı Keşfedin</h1>
+        <p>Doğan tarih ve sanayi hepsi bir arada</p>
+    </header>
+
+    <div class="container">
+
+
+        <section id="hakkinda">
+            <h2>Şehir Hakkında</h2>
+            <p>Sakarya, Marmara Bölgesi'nin doğusunda yer alan, zengin su kaynakları ve verimli topraklarıyla bilinen
+                bir şehirdir. Hem bir sanayi devi hem de bir huzur rotasıdır.</p>
+
+            <div class="info-box">
+                <div class="info-card">
+                    <h3>Nüfus</h3>
+                    <p>2025 verilerine göre yaklaşık <strong>1.123.000</strong> kişi.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Konum</h3>
+                    <p>İstanbul ve Ankara'nın tam ortasında, stratejik bir kavşakta.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Meşhur Lezzet</h3>
+                    <p>Islama Köfte ve Kabak Tatlısı.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeri">
+            <h2>Gezilecek Yerler</h2>
+            <div class="slider-container">
+                <div class="slides" id="slider">
+
+                    <div class="slide">
+                        <img src="sapanca.jpg" alt="Sapanca Gölü">
+                        <div class="slide-caption">Sapanca Gölü - Huzurun Adresi</div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="acarlarlongoz.jpg" alt="Acarlar Longozu">
+                        <div class="slide-caption">Acarlar Longozu - Nadir Bir Doğa Harikası</div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="taraklievler.jpg" alt="Taraklı Evleri">
+                        <div class="slide-caption">Taraklı - Tarihi Osmanlı Evleri</div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="poyraz.jpg" alt="Poyrazlar Gölü">
+                        <div class="slide-caption">Poyrazlar Gölü Tabiat Parkı</div>
+                    </div>
+                </div>
+
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>2026 Yusuf Selim Uludağ</p>
+        <a href="hakkımda.html">Hakkımda</a>
+        <a href="cv.html">CV</a>
+        <a href="Takım.html">Takımım</a>
+        <a href="iletişim.html">İletişim</a>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementById('slider');
+        const totalSlides = 4;
+
+        function moveSlide(step) {
+            currentSlide += step;
+
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+
+            slides.style.transform = `translateX(-${currentSlide * 800}px)`;
+        }
+
+
+    </script>
+</body>
+
 </html>

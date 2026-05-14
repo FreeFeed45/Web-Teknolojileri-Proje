@@ -1,8 +1,121 @@
 <html>
-    <title>
-        CV
-    </title>
-    <body>
-        asd
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>İletişim</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="iletisim.css">
+
+</head>
+
+<body>
+
+    <form id="app" class="container" action="islem.php" method="POST">
+        <h2>İletişim Formu</h2>
+
+        <input type="text" id="ad" name="ad_soyad" v-model="form.ad" placeholder="Ad Soyad">
+        <input type="text" id="email" name="eposta" v-model="form.email" placeholder="E-posta">
+        <input type="text" id="tel" name="telefon" v-model="form.tel" placeholder="Telefon">
+
+        <select id="konu" name="konu" v-model="form.konu">
+            <option value="">Konu Seçin</option>
+            <option value="Destek">Destek</option>
+            <option value="Öneri">Öneri</option>
+        </select>
+        <div class="checkbox-grup">
+            <label class="checkbox-satir">
+                <input type="checkbox" name="kosul" v-model="form.kosul" required>
+                <span>Bu E-Posta adresinin size ait olduğunu kabul ediyor musunuz?</span>
+            </label>
+            <label class="checkbox-satir">
+                <input type="checkbox" name="kosul2" v-model="form.kosul2" required>
+                <span>Bu Telefon numarasının size ait olduğunu kabul ediyor musunuz?</span>
+            </label>
+        </div>
+
+        <div class="radio-grup-satir">
+            <label class="radio-satir">
+                <input type="radio" value="1" name="gondermek" id="RadioChecked"> Gonder
+            </label>
+            <label class="radio-satir">
+                <input type="radio" value="0" name="gondermek" checked> Gonderme
+            </label>
+        </div>
+
+        <textarea id="mesaj" name="mesaj" v-model="form.mesaj" placeholder="Mesajınız" required></textarea>
+
+        <button type="button" class="jsbtn" onclick="jsKontrol()">JS ile Denetle ve Gönder</button>
+        <button type="button" class="vuebtn" @click="vueKontrol">Vue ile Denetle ve Gönder</button>
+    </form>
+
+    <script>
+        function jsKontrol() {
+            const ad = document.getElementById('ad').value;
+            const email = document.getElementById('email').value;
+            const tel = document.getElementById('tel').value;
+            const emailHata = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const telHata = /^[0-9]+$/;
+            const konu = document.getElementById('konu').value;
+            const kosul = document.getElementsByName('kosul')[0].checked;
+            const kosul2 = document.getElementsByName('kosul2')[0].checked;
+
+            if (ad === "" || email === "" || tel === "") {
+                alert("JS Hatası: Tüm alanları doldurun!");
+            } else if (!emailHata.test(email)) {
+                alert("JS Hatası: Geçersiz e-mail formatı!");
+
+            } else if (konu === "") {
+                alert("JS Hatası: Lütfen bir konu seçin!");
+            }
+            else if (!telHata.test(tel)) {
+                alert("JS Hatası: Telefon sadece rakam olmalı!");
+            } else if (!kosul || !kosul2) {
+                alert("JS Hatası: Onay kutularını işaretlemelisiniz!");
+            } else if (RadioChecked.checked == 1) {
+                document.getElementById('app').submit();
+            } else {
+                alert("Bir hata bulunamamıştır.");
+            }
+        }
+
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    form: { ad: '', email: '', tel: '', konu: '', mesaj: '', kosul: false, kosul2: false }
+                }
+            },
+            methods: {
+                vueKontrol() {
+                    const emailHata = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!this.form.ad || !this.form.email || !this.form.tel) {
+                        alert("Vue Hatası: Boş alan bırakmayın!");
+                    } else if (!this.form.konu) {
+                        alert("Vue Hatası: Lütfen bir konu seçin!");
+                    } else if (!emailHata.test(this.form.email)) {
+                        alert("Vue Hatası: E-mail hatalı!");
+                    } else if (isNaN(this.form.tel)) {
+                        alert("Vue Hatası: Telefon rakam olmalı!");
+                    } else if (!this.form.kosul || !this.form.kosul2) {
+                        alert("Vue Hatası: Onay kutularını işaretlemelisiniz!");
+                    } else if (RadioChecked.checked == 1) {
+                        document.getElementById('app').submit();
+                    } else {
+                        alert("Bir hata bulunamamıştır.");
+                    }
+                }
+            }
+        }).mount('#app');
+    </script>
+    <div class="bottom-bar">
+        <div class="redirect">
+            <a href="hakkımda.html">Hakkımda</a>
+            <a href="cv.html">CV</a>
+            <a href="Şehir.html">Şehrim</a>
+            <a href="Takım.html">Takımım</a>
+
+        </div>
+    </div>
+</body>
+
 </html>
