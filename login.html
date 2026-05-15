@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Öğrenci Giriş Sistemi</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h2>Giriş Yap</h2>
+        <form id="loginForm" action="sifre.php" method="POST" onsubmit="return validateForm()">
+            <input type="text" id="email" name="email" placeholder="b2412100001@sakarya.edu.tr">
+            <input type="password" id="password" name="password" placeholder="Şifre (Örn: b2412100001)">
+            <p id="errorMessage" class="error">Lütfen alanları boş bırakmayın ve geçerli bir mail girin.</p>
+            <button type="submit">Giriş Yap</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('errorMessage');
+
+
+            const emailPattern = /^[a-zA-Z0-9._-]+@sakarya\.edu\.tr$/;
+
+            if (email === "" || password === "") {
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Alanlar boş bırakılamaz!";
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                errorMsg.style.display = "block";
+                errorMsg.innerText = "Lütfen @sakarya.edu.tr formatında mail girin!";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+<footer>
+        <p>2026 Yusuf Selim Uludağ</p>
+        <a href="hakkimda.html">Hakkımda</a>
+        <a href="Şehir.html">Şehrim</a>
+        <a href="cv.html">CV</a>
+        <a href="iletişim.html">İletişim</a>
+        <a href="Takım.html">Takım</a>
+        <a href="soz.html">Günün Sözü</a>
+    </footer>
+</body>
+
+</html>

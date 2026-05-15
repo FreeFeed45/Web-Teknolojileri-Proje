@@ -1,0 +1,47 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Günün Sözü</title>
+    <link rel="stylesheet" href="soz.css">
+</head>
+<body>
+    <div class="card">
+        <h1>📜 Günün Sözü</h1>
+        <p id="quote">Söz yükleniyor...</p>
+        <button onclick="sozdegis()">Yeni Söz Getir</button>
+    </div>
+
+    <script>
+        async function sozdegis() {
+            const soz = document.getElementById('quote');
+            
+            soz.innerText = "Yükleniyor...";
+
+            try {
+                const response = await fetch('https://api.adviceslip.com/advice');
+                
+                
+
+                const data = await response.json();
+
+                soz.innerText = `"${data.slip.advice}"`;
+
+            } catch (error) {
+                soz.innerText = "Söz alınırken bir hata oluştu. Lütfen internet bağlantınızı kontrol edin.";
+                console.error("Hata Detayı:", error);
+            }
+        }
+
+        sozdegis();
+    </script>
+    <footer>
+        <p style="color: white;">2026 Yusuf Selim Uludağ</p>
+        <a href="hakkimda.html">Hakkımda</a>
+        <a href="Şehir.html">Şehrim</a>
+        <a href="cv.html">CV</a>
+        <a href="iletişim.html">İletişim</a>
+        <a href="Takım.html">Takım</a>
+        <a href="login.html">login</a>
+    </footer>
+</body>
+</html>

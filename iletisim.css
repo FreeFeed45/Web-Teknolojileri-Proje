@@ -84,3 +84,13 @@
             margin: 10px 0;
             font-size: 0.95rem;
         }
+        a {
+            color: black;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
